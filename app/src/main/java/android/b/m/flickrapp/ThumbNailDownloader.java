@@ -79,7 +79,6 @@ public class ThumbNailDownloader<T> extends HandlerThread {
         }
          final Bitmap bitmap = createBitmap(url);
          postDownloadedBitmapToMainThread(target, url, bitmap);
-
     }
 
     private Bitmap createBitmap(String url) {
