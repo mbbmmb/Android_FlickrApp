@@ -6,10 +6,6 @@ import android.content.ComponentName;
 import android.content.Context;
 import android.view.View;
 
-/**
- * Created by MadsBorkmann on 26/01/18.
- */
-
 public class JobServiceBuilder {
 
     private int mId;
