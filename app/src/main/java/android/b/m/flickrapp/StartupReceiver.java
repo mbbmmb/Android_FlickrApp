@@ -18,6 +18,7 @@ public class StartupReceiver extends BroadcastReceiver {
         JobScheduler scheduler = (JobScheduler) context.getSystemService(Context.JOB_SCHEDULER_SERVICE);
         int JOB_ID = 1;
         JobServiceBuilder builder = new JobServiceBuilder(context, JOB_ID);
+        
         if(builder.isBeenScheduled()) {
             Log.i(TAG, "Cancel JobScheduler on startup");
             scheduler.cancel(JOB_ID);
@@ -25,7 +26,5 @@ public class StartupReceiver extends BroadcastReceiver {
             Log.i(TAG, "Start Jobscheduler on startup");
             scheduler.schedule(builder.createJobInfo());
         }
-
-        }
-
+    }
 }
