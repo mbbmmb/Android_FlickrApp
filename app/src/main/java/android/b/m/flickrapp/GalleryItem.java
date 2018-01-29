@@ -29,10 +29,6 @@ public class GalleryItem {
         return mOwner;
     }
 
-    public void setOwner(String owner) {
-        mOwner = owner;
-    }
-
     public Uri getPhotoPageUri() {
         return Uri.parse("https://www.flickr.com/photos/")
                 .buildUpon()
@@ -51,5 +47,9 @@ public class GalleryItem {
 
     public void setUrl(String url) {
         mUrl = url;
+    }
+    
+    public void setOwner(String owner) {
+        mOwner = owner;
     }
 }
