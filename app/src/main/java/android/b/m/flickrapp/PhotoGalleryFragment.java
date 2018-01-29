@@ -103,7 +103,6 @@ public class PhotoGalleryFragment extends VisibleFragment {
     @Override
     public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
         super.onCreateOptionsMenu(menu, inflater);
-
         inflater.inflate(R.menu.photo_gallery_fragment, menu);
 
         MenuItem toggle = menu.findItem(R.id.menu_item_toggle_polling);
@@ -117,7 +116,7 @@ public class PhotoGalleryFragment extends VisibleFragment {
 
         MenuItem menuItem = menu.findItem(R.id.menu_item_search);
         final SearchView searchView = (SearchView) menuItem.getActionView();
-
+        
         searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
             @Override
             public boolean onQueryTextSubmit(String query) {
@@ -134,6 +133,7 @@ public class PhotoGalleryFragment extends VisibleFragment {
                 return false;
             }
         });
+        
         searchView.setOnSearchClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -193,6 +193,7 @@ public class PhotoGalleryFragment extends VisibleFragment {
         public void bindGalleryItem(GalleryItem galleryItem) {
             mGalleryItem = galleryItem;
         }
+        
         @Override
         public void onClick(View v) {
             Intent i = PhotoPageActivity.newIntent(getActivity(), mGalleryItem.getPhotoPageUri());
@@ -249,5 +250,4 @@ public class PhotoGalleryFragment extends VisibleFragment {
             setupAdapter();
         }
     }
-
 }
